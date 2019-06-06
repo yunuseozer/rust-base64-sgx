@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+use crate::{tables, Config, PAD_BYTE};
+use std::prelude::v1::*;
+
+>>>>>>> dc7389e (Port to sgx 1.1.3)
 #[cfg(any(feature = "alloc", feature = "std", test))]
 use crate::engine::DecodeEstimate;
 use crate::engine::Engine;

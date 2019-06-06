@@ -1,5 +1,6 @@
 use super::encoder::EncoderWriter;
-use crate::engine::Engine;
+use crate::Config;
+use std::prelude::v1::*;
 use std::io;
 use std::io::Write;
 

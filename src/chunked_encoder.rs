@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 #[cfg(any(feature = "alloc", feature = "std", test))]
 use alloc::string::String;
+=======
+use std::prelude::v1::*;
+use crate::{
+    encode::{add_padding, encode_to_slice},
+    Config,
+};
+>>>>>>> dc7389e (Port to sgx 1.1.3)
 use core::cmp;
-#[cfg(any(feature = "alloc", feature = "std", test))]
-use core::str;
 
 use crate::encode::add_padding;
 use crate::engine::{Config, Engine};
@@ -98,7 +104,7 @@ impl<'a> Sink for StringSink<'a> {
     type Error = ();
 
     fn write_encoded_bytes(&mut self, s: &[u8]) -> Result<(), Self::Error> {
-        self.string.push_str(str::from_utf8(s).unwrap());
+        self.string.push_str(std::str::from_utf8(s).unwrap());
 
         Ok(())
     }

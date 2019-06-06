@@ -10,6 +10,7 @@
 //! assert_eq!("base64: AAECAw==", format!("base64: {}", wrapper));
 //! ```
 
+use std::prelude::v1::*;
 use super::chunked_encoder::ChunkedEncoder;
 use crate::engine::Engine;
 use core::fmt::{Display, Formatter};

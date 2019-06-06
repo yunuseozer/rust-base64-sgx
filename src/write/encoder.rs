@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 use crate::encode_engine_slice;
 use crate::engine::Engine;
+=======
+use std::prelude::v1::*;
+use crate::encode::encode_to_slice;
+use crate::{encode_config_slice, Config};
+>>>>>>> dc7389e (Port to sgx 1.1.3)
 use std::{
     cmp, fmt, io,
     io::{ErrorKind, Result},

@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+use std::prelude::v1::*;
+use crate::{Config, PAD_BYTE};
+>>>>>>> dc7389e (Port to sgx 1.1.3)
 #[cfg(any(feature = "alloc", feature = "std", test))]
 use crate::chunked_encoder;
 #[cfg(any(feature = "alloc", feature = "std", test))]

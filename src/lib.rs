@@ -91,10 +91,19 @@
 #![allow(clippy::single_component_path_imports)]
 #![cfg_attr(not(any(feature = "std", test)), no_std)]
 
-#[cfg(all(feature = "alloc", not(any(feature = "std", test))))]
+#![cfg_attr(all(feature = "mesalock_sgx",
+                not(target_env = "sgx")), no_std)]
+#![cfg_attr(all(target_env = "sgx", target_vendor = "mesalock"), feature(rustc_private))]
+
+#[cfg(any(feature = "alloc", feature = "std"))]
+//#[cfg(all(feature = "alloc", not(any(feature = "std", test))))]
 extern crate alloc;
-#[cfg(any(feature = "std", test))]
-extern crate std as alloc;
+//#[cfg(any(feature = "std", test))]
+//extern crate std as alloc;
+
+#[cfg(all(feature = "mesalock_sgx", not(target_env = "sgx")))]
+#[macro_use]
+extern crate sgx_tstd as std;
 
 // has to be included at top level because of the way rstest_reuse defines its macros
 #[cfg(test)]
