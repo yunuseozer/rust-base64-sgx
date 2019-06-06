@@ -1,3 +1,4 @@
+use std::prelude::v1::*;
 use crate::{Config, PAD_BYTE};
 #[cfg(any(feature = "alloc", feature = "std", test))]
 use crate::{chunked_encoder, STANDARD};

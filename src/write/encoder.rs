@@ -1,3 +1,4 @@
+use std::prelude::v1::*;
 use crate::encode::encode_to_slice;
 use crate::{encode_config_slice, Config};
 use std::{

@@ -1,4 +1,5 @@
 use crate::{tables, Config, PAD_BYTE};
+use std::prelude::v1::*;
 
 #[cfg(any(feature = "alloc", feature = "std", test))]
 use crate::STANDARD;
