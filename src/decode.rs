@@ -1,10 +1,9 @@
 use crate::{tables, Config};
+use std::prelude::v1::*;
 
 #[cfg(any(feature = "alloc", feature = "std", test))]
 use crate::STANDARD;
 #[cfg(any(feature = "alloc", feature = "std", test))]
-use alloc::vec::Vec;
-#[cfg(any(feature = "std", test))]
 use std::error;
 use core::fmt;
 

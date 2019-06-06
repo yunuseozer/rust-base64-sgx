@@ -10,20 +10,25 @@ keywords = ["base64", "utf8", "encode", "decode", "no_std"]
 categories = ["encoding"]
 license = "MIT/Apache-2.0"
 edition = "2018"
+exclude = ["/sgx/*"]
 
 [[bench]]
 name = "benchmarks"
 harness = false
 
-[dev-dependencies]
-criterion = "0.3"
-rand = "0.6.1"
-doc-comment = "0.3"
-
 [features]
-default = ["std"]
+default = ["std", "mesalock_sgx"]
+std = ["mesalock_sgx"]
+mesalock_sgx = ["sgx_tstd", "std"]
 alloc = []
-std = []
+
+[dependencies]
+sgx_tstd = { rev = "v1.1.0", git = "https://github.com/apache/teaclave-sgx-sdk.git", optional = true }
+
+[dev-dependencies]
+#criterion = "0.3"
+#rand = "0.6.1"
+#doc-comment = "0.3"
 
 [profile.bench]
 # Useful for better disassembly when using `perf record` and `perf annotate`
